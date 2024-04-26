@@ -1,0 +1,153 @@
+@charset "UTF-8";
+@import "var";
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css");
+
+// #website-list:hover {cursor: url(../img/cursor.png) 20 30, auto;}
+
+
+progress {
+    appearance: none;
+    border: 2px solid $white;
+    height: 25px;
+    width: 70%;
+   position: relative;
+   top: 73%;
+   left: 10%;
+   padding:5px 0;
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: $black;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: $white;
+  }
+  @keyframes progress-bar-stripes {
+    from { background-position: 0px 40px; }
+    to { background-position: 0 0; }
+  }
+  
+  progress::-webkit-progress-value {
+    background-image: linear-gradient(90deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    animation: progress-bar-stripes 2s linear infinite;
+  }
+  
+  progress::-moz-progress-bar {
+    background-image: linear-gradient(90deg, #000 25%, transparent 25%, transparent 50%, #000 50%, #000 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    animation: progress-bar-stripes 2s linear infinite;
+  }
+* {cursor: url(../img/cursor.png),url(../img/cursor.png) 5 5, progress;
+    @include font-family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   color: $black;
+
+
+}
+
+body{ background-color: $black;  overflow-x:hidden ;}
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+#particles-js {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    /*   background-image: url("https://images.unsplash.com/photo-1608723724315-5e421874d7e9?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+   ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    li{
+       @include header-style;
+       color: $white;
+    }
+   }
+    .folder-center {
+        width: 348px;
+        height: 300px;
+        overflow: hidden;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+
+            p.typing-txt{
+                display: none;
+              }
+              
+              .typing {  
+              position: absolute;
+              top: 36%;
+              left: 10%;
+                display: inline-block; 
+                animation-name: cursor; 
+                animation-duration: 0.3s; 
+                animation-iteration-count: infinite; 
+                font-size: 40px;
+                color: $white;
+               } 
+               @keyframes cursor{ 
+                0%{border-right: 1px solid #fff} 
+                50%{border-right: 1px solid #000} 
+                100%{border-right: 1px solid #fff} 
+              }
+
+    }
+}
+
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+//   .count-particles{
+//     border-radius: 0 0 3px 3px;
+//   }
